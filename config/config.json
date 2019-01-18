@@ -1,8 +1,8 @@
 {
     "development": {
       "username": "root",
-      "password": "your pass",
-      "database": "black-n-white",
+      "password": "pass",
+      "database": "Black_n_White",
       "host": "localhost",
       "port": 3306,
       "dialect": "mysql"

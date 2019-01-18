@@ -1,0 +1,23 @@
+body {
+    background-image: url('../images/youHacked.png');
+}
+
+.thead{
+    background-color: black;
+    color: white;
+}
+
+input[type="number"] {
+    width: 3rem;
+  }
+  td, th {
+    padding: 10px 25px;
+}
+
+  .card {
+    margin-top: 25px;
+}
+  
+  #messages {
+    margin-top: 10px;
+  } 

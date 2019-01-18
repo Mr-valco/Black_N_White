@@ -1,0 +1,6 @@
+$(function () {
+
+
+//code for app
+    
+});

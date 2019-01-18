@@ -1,0 +1,26 @@
+{
+  "name": "sequelize_bamazon",
+  "version": "1.0.0",
+  "description": "an Amazon-like storefront with the MySQL and Sequelize. The web app will take in orders from customers and deplete stock from the store's inventory.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mr-valco/Sequelize_Bamazon.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mr-valco/Sequelize_Bamazon/issues"
+  },
+  "homepage": "https://github.com/Mr-valco/Sequelize_Bamazon#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "mysql": "^2.16.0",
+    "mysql2": "^1.6.4",
+    "sequelize": "^4.42.0"
+  }
+}

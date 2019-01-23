@@ -16,11 +16,12 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // server setup the public directory for static assets usage
-app.use(express.static(path.join(__dirname, './public')));
+app.use(express.static( './public'));
 
 // Routes
 require('./routes/api-routes')(app);
 require('./routes/html-routes')(app);
+
 
 //Syncs the db
 db.sequelize.sync().then(function () {

@@ -1,9 +1,9 @@
 body {
-    background-image: url('../images/youHacked.png');
+      background-color:#EAF1F7
 }
 
 .thead{
-    background-color: black;
+    background-color: #6F9ABC;
     color: white;
 }
 
@@ -21,3 +21,18 @@ input[type="number"] {
   #messages {
     margin-top: 10px;
   } 
+  .navbar {
+    background-color: #38577C;
+  }
+  .nav-link {
+    color: #EAF1F7
+  }
+  .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+  #browse {
+    margin-top: 15px;
+  }

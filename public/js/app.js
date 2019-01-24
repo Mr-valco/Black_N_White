@@ -82,3 +82,6 @@ $(document).ready(function() {
     reader.onerror = function(){ alert('Unable to read ' + file.fileName); };
   }
 
+//code for app
+    
+

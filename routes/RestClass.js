@@ -24,7 +24,7 @@ class RestfulAPI {
         _.forEach(req.body.data, (item) => {
           this.model.create(item)
           .then(function(data) {
-            console.log(`item inserted. sso: ${item.SSO}`);
+            console.log(`item inserted. sso: ${item.sso}`);
           })
           .catch(function(err){
             console.log(`entry failed: ${JSON.stringify(item)}`);

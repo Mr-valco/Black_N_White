@@ -2,47 +2,42 @@
 
 module.exports = function (connection, Sequelize) {
     var Black_List = connection.define('Black_List', {
-        Time: {
+        time: {
             type: Sequelize.STRING,
             allowNull: false,
             validate: {
                 notEmpty: true
             }
         },
-        SSO: {
+        sso: {
             type: Sequelize.STRING,
             allowNull: false,
             validate: {
                 notEmpty: true
             }
         },
-        Action: {
+        action: {
             type: Sequelize.STRING,
             allowNull: false,
             validate: {
                 notEmpty: true
             }
         },
-        Device_ID: {
+        device_ID: {
             type: Sequelize.STRING,
             allowNull: false,
             validate: {
                 notEmpty: true
             }
         },
-        Count: {
-            type: Sequelize.INTEGER,
-            allowNull: false,
-            validate: {
-                notEmpty: true
-            }
-        },
-        Message: {
+        count: {
             type: Sequelize.STRING,
-            allowNull: false,
-            validate: {
-                notEmpty: true
-            }
+            allowNull: true
+            
+        },
+        message: {
+            type: Sequelize.STRING,
+            allowNull: true
         }
     });
 

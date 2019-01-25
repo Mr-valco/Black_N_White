@@ -47,7 +47,7 @@ const nodemailer = require('nodemailer'),
   path = require('path'),
   Promise = require('bluebird');
 
-
+// Testing only will need to add concat SSOs later
  let users = [
    {
     name: 'Genie Yang',
@@ -58,8 +58,8 @@ const nodemailer = require('nodemailer'),
     email: '212579323@ge.com'
    },   
    {
-    name: 'Valentin Meica',
-    email: 'Valentin.Meica@ge.com'
+    // name: 'Valentin Meica',
+    // email: 'Valentin.Meica@ge.com'
    }, 
    
  ];
@@ -88,7 +88,7 @@ const nodemailer = require('nodemailer'),
     return Promise.all(results.map((result) => {
       sendEmail({
         to: result.context.email,
-        from: 'Me :)',
+        from: 'MyApps Team',
         subject: result.email.subject,
         html: result.email.html,
         text: result.email.text,

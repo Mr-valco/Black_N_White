@@ -54,12 +54,12 @@ $(document).ready(function() {
       //mapping data from the array 
       var mappedData = data.map(function(entry) {
           return {
-            Time: entry[0],
-            SSO: entry[1],
-            Action: entry[2],
-            Device_ID: entry[3],
-            Count: entry[4],
-            Message: entry[5]
+            time: entry[0],
+            sso: entry[1],
+            action: entry[2],
+            device_ID: entry[3],
+            count: entry[4],
+            message: entry[5]
           }
       });
     //posting the object into the table

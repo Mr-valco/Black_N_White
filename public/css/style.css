@@ -16,6 +16,7 @@ input[type="number"] {
 
   .card {
     margin-top: 25px;
+    padding: 30px;
 }
   
   #messages {

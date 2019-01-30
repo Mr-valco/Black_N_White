@@ -37,3 +37,29 @@ width: 50%;
 #browse {
 margin-top: 15px;
 }
+
+
+* {
+    margin: 0;
+  }
+  html, body {
+    height: 100%;
+  }
+  .page-wrap {
+    min-height: 100%;
+    /* equal to footer height */
+    margin-bottom: -50px; 
+  }
+  .page-wrap:after {
+    content: "";
+    display: block;
+  }
+  .site-footer, .page-wrap:after {
+    height: 50px; 
+  }
+
+footer{
+    text-align: center;
+    background-color: #38577C;
+    color: white;
+}

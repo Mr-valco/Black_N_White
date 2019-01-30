@@ -19,6 +19,7 @@
   "homepage": "https://github.com/Mr-valco/Sequelize_Bamazon#readme",
   "dependencies": {
     "bluebird": "^3.5.3",
+    "body-parser": "^1.18.3",
     "csv": "^5.1.1",
     "email-templates": "^2.7.1",
     "express": "^4.16.4",

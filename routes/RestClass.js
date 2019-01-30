@@ -21,6 +21,7 @@ class RestfulAPI {
   
     create() {
       this.app.post(`/api/${this.resource}`, (req, res) => {
+        //console.log(req.body);
         _.forEach(req.body.data, (item) => {
           this.model.create(item)
           .then(function(data) {
@@ -32,7 +33,7 @@ class RestfulAPI {
         });
       })
     }
-  
+
     find(identifier) {
       this.app.get(`/api/${this.resource}/:${identifier}`, (req, res) => {
         this.model.findAll({

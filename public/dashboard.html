@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    
+
 
     <!--jQuery, Bootstrap js-->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
@@ -32,58 +32,60 @@
 </head>
 
 <body>
-
-    <!--Navbar to display cart modal for user to select with Home option to return back and refresh-->
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <a class="navbar-brand" href="/"> <img src="./images/ge.png" alt="moto" width="50px" height="50px"></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavSupportedContent" aria-controls="#navbarNavSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+    <div class="page-wrap">
+        <!--Navbar to display cart modal for user to select with Home option to return back and refresh-->
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <a class="navbar-brand" href="/"> <img src="./images/ge.png" alt="moto" width="50px" height="50px"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavSupportedContent"
+                aria-controls="#navbarNavSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
             <div class="collapse navbar-collapse" id="navbarNavSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="./home.html">Home<span class="sr-only">(Current)</span></a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="./blackList.html">Black List<span class="sr-only">(Current)</span></a>
-                </li>
-                <li class="nav-item active">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="./home.html">Home<span class="sr-only">(Current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="./blackList.html">Black List<span class="sr-only">(Current)</span></a>
+                    </li>
+                    <li class="nav-item active">
                         <a class="nav-link" href="./whiteList.html">White List<span class="sr-only">(Current)</span></a>
                     </li>
-            </ul>
+                </ul>
+            </div>
+            <!-- <img src="./images/BlackWhite.gif" alt="bnw" width="120px" height="60px"> -->
+        </nav>
+
+
+        <!--inventory table built when server running-->
+        <div class="card container shadow-lg">
+            <!--display ass a table-->
+            <div id="inputs" class="clearfix" style="font-weight:bold;">
+                <input type="file" id="files" name="files[]" multiple="">
+            </div>
+            <output id="list" style="font-weight:bold;">
+                <span style="font-weight:bold;">___</span><br>
+            </output>
+            <table id="contents" style="width:100%; height:400px;" border="">
+                <tbody>
+                    <tr>
+                </tbody>
+            </table>
         </div>
-<!-- <img src="./images/BlackWhite.gif" alt="bnw" width="120px" height="60px"> -->
-    </nav>
 
 
-    <!--inventory table built when server running-->
-    <div class="card container shadow-lg">
-        <!--display ass a table-->
-        <div id="inputs" class="clearfix" style="font-weight:bold;">
-            <input type="file" id="files" name="files[]" multiple="">
-        </div>
-        <output id="list" style="font-weight:bold;">
-            <span style="font-weight:bold;">___</span><br>
-        </output>
-        <table id="contents" style="width:100%; height:400px;" border="">
-            <tbody>
-                <tr>
-            </tbody>
-        </table>
-    </div>
+</div>
+        <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha256-/SIrNqv8h6QGKDuNoLGA4iret+kyesCkHGzVUUV0shc="
+            crossorigin="anonymous"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.8.9/jquery.csv.min.js"></script>
+        <br>
+        <footer class="site-footer">
+            <p>&copy;Copyright GE Digital</p>
+        </footer>
 
-
-
-    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha256-/SIrNqv8h6QGKDuNoLGA4iret+kyesCkHGzVUUV0shc="
-        crossorigin="anonymous"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.8.9/jquery.csv.min.js"></script>
-    <footer>
-        <p>Copyright</p>
-    </footer>
-
-    <!-- js file-->
-    <script src="./js/csvUpload.js"></script>
+        <!-- js file-->
+        <script src="./js/csvUpload.js"></script>
 </body>
 
 </html>

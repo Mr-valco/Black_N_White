@@ -32,28 +32,8 @@
 </head>
 
 <body>
-    <!--Navbar to display cart modal for user to select with Home option to return back and refresh-->
-    <nav class="navbar navbar-expand-lg ">
-        <a class="navbar-brand" href="/"> <img src="./images/ge.png" alt="moto" width="50px" height="50px"></a>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="./home.html">Home<span class="sr-only">(Current)</span></a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="./dashboard.html">Upload CSV<span class="sr-only">(Current)</span></a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="./whiteList.html">White List<span class="sr-only">(Current)</span></a>
-                </li>
-            </ul>
 
-            <!-- Button trigger modal -->
-            <button type="button" class="btn btn-basic" data-toggle="modal" data-target="#exampleModal">
-                <i class="fa-2x fas fa-envelope"> Email</i>
-            </button>
-
-            <!-- <img src="./images/BlackWhite.gif" alt="bnw" width="120px" height="60px"> -->
+    <!-- <img src="./images/BlackWhite.gif" alt="bnw" width="120px" height="60px"> -->
     <div class="page-wrap">
         <!--Navbar to display cart modal for user to select with Home option to return back and refresh-->
         <nav class="navbar navbar-expand-lg navbar-dark">
@@ -62,7 +42,7 @@
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-    </nav>
+
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
@@ -77,7 +57,11 @@
 
                 </ul>
             </div>
-            <!-- <img src="./images/BlackWhite.gif" alt="bnw" width="120px" height="60px"> -->
+            
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-basic" data-toggle="modal" data-target="#exampleModal">
+                <i class="fa-2x fas fa-envelope"> Email</i>
+            </button>
         </nav>
 
 
@@ -125,9 +109,10 @@
                                 <!-- <td>SSO Email:</td>  -->
                                 <!-- <td><input type="email" name="txtemail" id="txtemail" placeholder="Enter Email" size="35"></td>  -->
                                 <form>
-                                        <label for="email">SSO Email:</label>
-                                        <input type="email" class="form-control" id="txtemail" placeholder="Enter SSO Email Address" name="txtemail">
-                                        <span id="message"></span>
+                                    <label for="email">SSO Email:</label>
+                                    <input type="email" class="form-control" id="txtemail" placeholder="Enter SSO Email Address"
+                                        name="txtemail">
+                                    <span id="message"></span>
                                 </form>
                             </tr>
                         </table>
@@ -137,21 +122,14 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     <button type="button" id="btnsendemail" class="btn btn-primary">Send</button>
-
-
-
                 </div>
-
-
             </div>
-
         </div>
-
     </div>
-    </div>
+   
 
 
-    </div>
+  
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha256-/SIrNqv8h6QGKDuNoLGA4iret+kyesCkHGzVUUV0shc="
         crossorigin="anonymous"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>

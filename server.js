@@ -1,6 +1,11 @@
 // require express and path
 const express = require('express');
 const path = require('path');
+const bodyParser = require('body-parser');
+const nodeMailer = require('nodemailer');
+
+const emailTemplate = require('./emtpl');
+
 
 const app = express();
 
@@ -15,6 +20,9 @@ const db = require('./models');
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
+
 // server setup the public directory for static assets usage
 app.use(express.static( './public'));
 
@@ -28,6 +36,43 @@ db.sequelize.sync().then(function () {
 
 })
 
+app.get('/blacklist', function(req,res){
+        
+    res.sendFile(path.join(__dirname, "/../public/blackList.html" ))
+})
+
+
+//Email Setup
+
+//POST route from email form
+app.post('/send-email', function (req, res) {
+    console.log(req.body);
+    let transporter = nodeMailer.createTransport({
+        service: "gmail",  
+            // host: "smtp.gmail.com",  
+            auth: {  
+                user: "bnwtest7133@gmail.com",  
+                pass: "password12."  
+            }   
+    });
+
+    var html = emailTemplate();
+
+    let mailOptions = {
+        // from: '"MyApps Team" <bnwtest7133@gmail.com">', // sender address
+        to: req.body.email,// req.body.email, // list of receivers
+        subject: 'MyApps  Email Testing', // Subject line
+        html: html
+    };
+    transporter.sendMail(mailOptions, (error, info) => {
+        if (error) {
+            return console.log(error);
+        }
+        console.log('Message %s sent: %s', info.messageId, info.response);
+        res.send('sent');
+    });
+});
+ 
 //Starting server on the predefined Port
 app.listen(PORT, function () {
     console.log(`App is now listening on PORT ${PORT}`)

@@ -113,6 +113,38 @@ $(function () {
     getWhiteList();
     /* ******************************************* */
 
+//Email Modal Cart Function
+
+
+
+    
+
+
+// $(document).ready(function(){  
+//     // var name;  
+//     var email;  
+//     // var mobile;  
+//     var message;  
+//     $("#btnsendemail").click(function() {        
+//         // name    = $("#txtname").val();  
+//         email   = $("#txtemail").val();  
+//         // mobile  = $("#txtmobile").val();  
+//         message = $("#txtmessage").val();  
+//         $("#message").text("Sending Email please wait ...");  
+//         $.get("/sendmail",  
+//             {  
+//                 // name: name,  
+//                 email: email,  
+//                 // mobile: mobile,  
+//                 message: message  
+//             },  
+//         function(data) {  
+//         if(data == "sent") {  
+//             $("#message").html("Email has been send successfully.");  
+//         }  
+//       });  
+//     });  
+// });  
 
     //bttons
     $('#locked_users').on('click', '.unlockUsr', unlockUser);

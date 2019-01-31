@@ -32,6 +32,28 @@
 </head>
 
 <body>
+    <!--Navbar to display cart modal for user to select with Home option to return back and refresh-->
+    <nav class="navbar navbar-expand-lg ">
+        <a class="navbar-brand" href="/"> <img src="./images/ge.png" alt="moto" width="50px" height="50px"></a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="./home.html">Home<span class="sr-only">(Current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="./dashboard.html">Upload CSV<span class="sr-only">(Current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="./whiteList.html">White List<span class="sr-only">(Current)</span></a>
+                </li>
+            </ul>
+
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-basic" data-toggle="modal" data-target="#exampleModal">
+                <i class="fa-2x fas fa-envelope"> Email</i>
+            </button>
+
+            <!-- <img src="./images/BlackWhite.gif" alt="bnw" width="120px" height="60px"> -->
     <div class="page-wrap">
         <!--Navbar to display cart modal for user to select with Home option to return back and refresh-->
         <nav class="navbar navbar-expand-lg navbar-dark">
@@ -40,6 +62,7 @@
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+    </nav>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
@@ -82,6 +105,50 @@
                 </div>
             </div>
         </div>
+    </div>
+
+    <!-- Email Modal Body -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Send Email to SSO User</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div id="container">
+                        <table>
+                            <tr>
+                                <!-- <td>SSO Email:</td>  -->
+                                <!-- <td><input type="email" name="txtemail" id="txtemail" placeholder="Enter Email" size="35"></td>  -->
+                                <form>
+                                        <label for="email">SSO Email:</label>
+                                        <input type="email" class="form-control" id="txtemail" placeholder="Enter SSO Email Address" name="txtemail">
+                                        <span id="message"></span>
+                                </form>
+                            </tr>
+                        </table>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" id="btnsendemail" class="btn btn-primary">Send</button>
+
+
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+    </div>
 
 
     </div>
@@ -97,6 +164,7 @@
 
     <!-- js file-->
     <script src="./js/app.js"></script>
+    <script src="./js/sendEmail.js"></script>
 </body>
 
 </html>

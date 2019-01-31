@@ -30,6 +30,14 @@ $(function () {
             .text('Remove')
             .attr('data-id', item.id);
 
+        const emailBtn = $('<button>')
+            .addClass('btn btn-basic emailClass fa-2x fas fa-envelope')
+            .attr('data-toggle', 'modal')
+            .attr('data-target', '#exampleModal')
+            .attr('sso', item.sso)
+            .attr('record-id', item.id);
+
+
         //appending items to the div
         tr.append(
             $('<td>').text(item.time),
@@ -38,6 +46,7 @@ $(function () {
             $('<td>').text(item.device_ID),
             $('<td>').text(item.count),
             $('<td>').text(item.message),
+            $('<td>').append(emailBtn),
             $('<td>').append(button)
         );
         return tr;
@@ -53,26 +62,37 @@ $(function () {
 
         const id = $(this).attr('data-id');
 
-            $.ajax({
-               url: `/api/Black_Lists/${id}`,
-               type: 'DELETE',
-               success: function(result) {
-                   // Do something with the result
-                   getItems();
-                   console.log('record removed.');
-               }
-           });
+        $.ajax({
+            url: `/api/Black_Lists/${id}`,
+            type: 'DELETE',
+            success: function (result) {
+                // Do something with the result
+                getItems();
+                console.log('record removed.');
+            }
+        });
 
 
         // this would be a post to put data to another table
-  /*       $.get(`/api/Black_Lists/${id}`)
-            .then(function (data) {
-                console.log(data);
-                $.post('/api/White_Lists/', data, function (res) {
-                    console.log('added to White list');
-                })
+        /*       $.get(`/api/Black_Lists/${id}`)
+                  .then(function (data) {
+                      console.log(data);
+                      $.post('/api/White_Lists/', data, function (res) {
+                          console.log('added to White list');
+                      })
+      
+                  }); */
+    }
 
-            }); */
+
+    //email button
+    const sendEmail = function (event) {
+        event.preventDefault();
+
+        const id = $(this).attr('data-id');
+        const userSSO = $(this).attr('sso');
+
+        $('#txtemail').val(`${userSSO}@ge.com`);
     }
     //____________________________________________________________________________________________________
 
@@ -113,39 +133,40 @@ $(function () {
     getWhiteList();
     /* ******************************************* */
 
-//Email Modal Cart Function
+    //Email Modal Cart Function
 
 
 
-    
 
 
-// $(document).ready(function(){  
-//     // var name;  
-//     var email;  
-//     // var mobile;  
-//     var message;  
-//     $("#btnsendemail").click(function() {        
-//         // name    = $("#txtname").val();  
-//         email   = $("#txtemail").val();  
-//         // mobile  = $("#txtmobile").val();  
-//         message = $("#txtmessage").val();  
-//         $("#message").text("Sending Email please wait ...");  
-//         $.get("/sendmail",  
-//             {  
-//                 // name: name,  
-//                 email: email,  
-//                 // mobile: mobile,  
-//                 message: message  
-//             },  
-//         function(data) {  
-//         if(data == "sent") {  
-//             $("#message").html("Email has been send successfully.");  
-//         }  
-//       });  
-//     });  
-// });  
+
+    // $(document).ready(function(){  
+    //     // var name;  
+    //     var email;  
+    //     // var mobile;  
+    //     var message;  
+    //     $("#btnsendemail").click(function() {        
+    //         // name    = $("#txtname").val();  
+    //         email   = $("#txtemail").val();  
+    //         // mobile  = $("#txtmobile").val();  
+    //         message = $("#txtmessage").val();  
+    //         $("#message").text("Sending Email please wait ...");  
+    //         $.get("/sendmail",  
+    //             {  
+    //                 // name: name,  
+    //                 email: email,  
+    //                 // mobile: mobile,  
+    //                 message: message  
+    //             },  
+    //         function(data) {  
+    //         if(data == "sent") {  
+    //             $("#message").html("Email has been send successfully.");  
+    //         }  
+    //       });  
+    //     });  
+    // });  
 
     //bttons
     $('#locked_users').on('click', '.unlockUsr', unlockUser);
+    $('#locked_users').on('click', '.emailClass', sendEmail);
 });

@@ -63,3 +63,11 @@ footer{
     background-color: #38577C;
     color: white;
 }
+
+.unlocked{
+  color: green;
+}
+
+.locked{
+  color: red;
+}

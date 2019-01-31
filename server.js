@@ -51,8 +51,8 @@ app.post('/send-email', function (req, res) {
         service: "gmail",  
             // host: "smtp.gmail.com",  
             auth: {  
-                user: "bnwtest7133@gmail.com",  
-                pass: "password12."  
+                user: process.env.EMAIL_USER,  
+                pass: process.env.PASS  
             }   
     });
 

@@ -42,7 +42,7 @@ $(function () {
         tr.append(
             $('<td>').text(item.time),
             $('<td>').text(item.sso),
-            $('<td>').text(item.action),
+            $('<td class="locked">').text(item.action),
             $('<td>').text(item.device_ID),
             $('<td>').text(item.count),
             $('<td>').text(item.message),
@@ -122,7 +122,7 @@ $(function () {
         tr.append(
             $('<td>').text(item.time),
             $('<td>').text(item.sso),
-            $('<td>').text(item.action),
+            $('<td class="unlocked">').text(item.action),
             $('<td>').text(item.device_ID),
             $('<td>').text(item.count),
             $('<td>').text(item.message)

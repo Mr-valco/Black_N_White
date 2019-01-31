@@ -1,39 +1,65 @@
 body {
-      background-color:#EAF1F7
+background-color:#EAF1F7
 }
 
 .thead{
-    background-color: #6F9ABC;
-    color: white;
+background-color: #6F9ABC;
+color: white;
 }
 
 input[type="number"] {
-    width: 3rem;
-  }
-  td, th {
-    padding: 10px 25px;
+width: 3rem;
+}
+td, th {
+padding: 10px 25px;
 }
 
-  .card {
-    margin-top: 25px;
-    padding: 30px;
+.card {
+margin-top: 25px;
+padding: 30px;
 }
-  
-  #messages {
-    margin-top: 10px;
-  } 
-  .navbar {
-    background-color: #38577C;
+
+#messages {
+margin-top: 10px;
+} 
+.navbar {
+background-color: #38577C;
+}
+.nav-link {
+color: #EAF1F7
+}
+.center {
+display: block;
+margin-left: auto;
+margin-right: auto;
+width: 50%;
+}
+#browse {
+margin-top: 15px;
+}
+
+
+* {
+    margin: 0;
   }
-  .nav-link {
-    color: #EAF1F7
+  html, body {
+    height: 100%;
   }
-  .center {
+  .page-wrap {
+    min-height: 100%;
+    /* equal to footer height */
+    margin-bottom: -50px; 
+  }
+  .page-wrap:after {
+    content: "";
     display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
   }
-  #browse {
-    margin-top: 15px;
+  .site-footer, .page-wrap:after {
+    height: 50px; 
   }
+
+footer{
+    text-align: center;
+    background-color: #38577C;
+    color: white;
+}

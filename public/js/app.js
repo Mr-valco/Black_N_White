@@ -25,14 +25,15 @@ $(function () {
 
         // unlock button
         const button = $('<button>')
-            .addClass('btn btn-warning add-to-cart')
-            .text('Unlock')
+            .addClass('btn btn-danger unlockUsr')
+            .attr('id', 'unlocking')
+            .text('Remove')
             .attr('data-id', item.id);
 
         //appending items to the div
         tr.append(
             $('<td>').text(item.time),
-            $('<td>').text(`$${item.sso}`),
+            $('<td>').text(item.sso),
             $('<td>').text(item.action),
             $('<td>').text(item.device_ID),
             $('<td>').text(item.count),
@@ -44,17 +45,41 @@ $(function () {
 
     getItems();
     /* ******************************************* */
-    
+
     //____________________________________________________________________________________________________
     //button to move to the white list and delete from black list
-    
+    const unlockUser = function (event) {
+        event.preventDefault();
 
+        const id = $(this).attr('data-id');
+
+            $.ajax({
+               url: `/api/Black_Lists/${id}`,
+               type: 'DELETE',
+               success: function(result) {
+                   // Do something with the result
+                   getItems();
+                   console.log('record removed.');
+               }
+           });
+
+
+        // this would be a post to put data to another table
+  /*       $.get(`/api/Black_Lists/${id}`)
+            .then(function (data) {
+                console.log(data);
+                $.post('/api/White_Lists/', data, function (res) {
+                    console.log('added to White list');
+                })
+
+            }); */
+    }
     //____________________________________________________________________________________________________
 
     /* ******************************************* */
     //White_List table display code
     /* ******************************************* */
-    
+
     // rendering the Black_List table
     const renderWL = function (items) {
         $('#unlocked_users').empty();
@@ -93,7 +118,7 @@ $(function () {
 
 
     
-});
+
 
 // $(document).ready(function(){  
 //     // var name;  
@@ -120,3 +145,7 @@ $(function () {
 //       });  
 //     });  
 // });  
+
+    //bttons
+    $('#locked_users').on('click', '.unlockUsr', unlockUser);
+});
